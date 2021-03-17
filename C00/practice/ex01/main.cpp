@@ -23,6 +23,11 @@ int main(void)
 			pb.addContact();
 		else if (cmd == "SEARCH")
 			pb.searchContact();
+		else if (cmd == "EXIT")
+		{
+			print("Good Bye! My Awesome PhoneBook");
+			return (0);
+		}
 	}
 	return (-1);
 }

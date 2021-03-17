@@ -28,4 +28,15 @@ void	phoneBook::searchContact(void)
 		contact[i].previewInfo();
 	}
 	std::cout<<"\nselect index : ";
+	std::cin>>idx;
+	if (std::cin.eof())
+		exit(-1);
+	if (idx < 0 || num <= idx || std::cin.fail())
+	{
+		print("wrong index!");
+		std::cin.clear();
+		std::cin.ignore();
+	}
+	else
+		contact[idx].viewInfo();
 }

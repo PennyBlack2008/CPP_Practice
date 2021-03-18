@@ -1,33 +1,30 @@
-#include "phoneBook.hpp"
+#include "PhoneBook.hpp"
 
-void	print(const char *s)
+void print(const char *s)
 {
-	std::cout<<"\n>>>>>>>> "<<s<<" <<<<<<<<\n\n";
+	std::cout<<"\n>>>>>>>>>>> "<<s<<" <<<<<<<<<<<<\n";
 }
 
 int main(void)
 {
 	std::string cmd;
-	phoneBook pb;
+	PhoneBook pb;
 
 	while (1)
 	{
-		print("My Awesome PhoneBook");
-		std::cout<<"select (ADD, SEARCH, EXIT) : ";
+		std::cout<<"select ADD, SERACH, EXIT : ";
 		std::getline(std::cin, cmd);
-
-		if (std::cin.eof())
-			return (-1);
-		std::cout<<"---------------------------\n\n";
 		if (cmd == "ADD")
-			pb.addContact();
+			pb.AddContact();
 		else if (cmd == "SEARCH")
-			pb.searchContact();
+			pb.SearchContact();
 		else if (cmd == "EXIT")
 		{
-			print("Good Bye! My Awesome PhoneBook");
+			print("end");
 			return (0);
 		}
+		else
+			print("wrong input");
 	}
 	return (-1);
 }

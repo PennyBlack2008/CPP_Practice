@@ -1,14 +1,10 @@
 SRCS	=	$(wildcard *.cpp)
-
 OBJS	=	$(SRCS:.cpp=.o)
 
-NAME	=	phoneBook
-
+NAME	=	PhoneBook
 RM		=	rm -rf
-
 CC		=	clang++
-
-CFLAG	=	-Wall -Werror -Wextra
+FLAGS	=	-Wall -Werror -Wextra
 
 
 
@@ -22,8 +18,6 @@ fclean	:	clean
 
 re		:	fclean all
 
-
-
-$(NAME)	:
-			$(CC) $(CFLAG) -c $(SRCS)
-			$(CC) $(CFLAG) -o $(NAME) $(OBJS)
+$(NAME)	:	
+	$(CC) $(FLAGS) -c $(SRCS)
+	$(CC) $(FLAGS) $(OBJS) -o $(NAME)

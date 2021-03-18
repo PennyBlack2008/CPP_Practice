@@ -1,4 +1,5 @@
 #include <iostream>
+#include <locale.h>
 
 char to_upper(char c)
 {

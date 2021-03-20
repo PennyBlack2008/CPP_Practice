@@ -13,7 +13,9 @@ int main(void)
 	while (1)
 	{
 		std::cout<<"select ADD, SERACH, EXIT : ";
-		std::getline(std::cin, cmd);
+		ßstd::getline(std::cin, cmd);
+		if (std::cin.eof())
+			exit(-1);
 		if (cmd == "ADD")
 			pb.AddContact();
 		else if (cmd == "SEARCH")

@@ -6,7 +6,7 @@
 /*   By: jikang <jikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 18:29:12 by jikang            #+#    #+#             */
-/*   Updated: 2021/03/21 21:37:48 by jikang           ###   ########.fr       */
+/*   Updated: 2021/03/21 21:44:11 by jikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,12 @@ void	PhoneBook::MakeChoice()
 		std::cin.ignore(1000, '\n');
 		std::cout<<"You got that wrong #\n";
 	}
-	else if (idx <= 0 || idx >= mNum)
+	else if (idx <= 0 || idx > mNum)
 	{
 		std::cin.clear();
 		std::cin.ignore();
 		std::cout<<"You got that wrong #\n";
+		std::cout<<"mNum is "<<mNum<<std::endl;
 	}
 	else
 	{

@@ -15,6 +15,7 @@ class Contact
 		void	AddField(int i);
 		void	ShowField(int i);
 		void	ShowChoice(void);
+		void	ShowContact(void);
 		
 };
 

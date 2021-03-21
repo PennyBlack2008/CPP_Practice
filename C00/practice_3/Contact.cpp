@@ -38,6 +38,15 @@ void	Contact::ShowChoice(void)
 	std::cout<<std::endl;
 }
 
+void	Contact::ShowContact(void)
+{
+	for (int i = 0; i < 11; i++)
+	{
+		std::cout<<mField[i]<<" : ";
+		std::cout<<mPrivateInfo[i]<<std::endl;
+	}
+}
+
 std::string		Contact::mField[11] =
 {
 	"first name",

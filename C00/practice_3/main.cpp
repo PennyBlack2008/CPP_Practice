@@ -6,7 +6,7 @@
 /*   By: jikang <jikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 17:55:38 by jikang            #+#    #+#             */
-/*   Updated: 2021/03/21 20:37:27 by jikang           ###   ########.fr       */
+/*   Updated: 2021/03/22 19:52:33 by jikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int main(void)
 			phoneBook.MakeChoice();
 		}
 		else
-			std::cout<<"You got that wrong input!"<<std::endl;
+			std::cerr<<"You got that wrong input!"<<std::endl;
 	}
 	return (-1);
 }

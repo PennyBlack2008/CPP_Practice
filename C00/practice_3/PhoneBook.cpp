@@ -40,7 +40,8 @@ void	PhoneBook::ShowChoice()
 	std::cout<<"-------------------------------------------\n";
 	for (int i = 0; i < mNum; i++)
 	{
-		std::cout<<"         "<<i + 1<<"|";
+		std::cout<<std::setw(10);
+		//std::cout<<"         "<<i + 1<<"|";
 		mPerson[i].ShowChoice();
 	}
 }

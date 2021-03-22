@@ -41,6 +41,7 @@ void	PhoneBook::ShowChoice()
 	for (int i = 0; i < mNum; i++)
 	{
 		std::cout<<std::setw(10);
+		std::cout<<i + 1<<"|";
 		//std::cout<<"         "<<i + 1<<"|";
 		mPerson[i].ShowChoice();
 	}

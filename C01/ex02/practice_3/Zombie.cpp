@@ -6,7 +6,7 @@
 /*   By: jikang <jikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 17:56:43 by jikang            #+#    #+#             */
-/*   Updated: 2021/03/26 18:43:42 by jikang           ###   ########.fr       */
+/*   Updated: 2021/03/26 20:03:13 by jikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,3 +28,7 @@ Zombie::~Zombie(void)
 {
 }
 
+void		Zombie::announce(void) const
+{
+	std::cout << "<" << mName << " (" << mType << ")> " << "Braiiiiiiinnnssss...\n";
+}

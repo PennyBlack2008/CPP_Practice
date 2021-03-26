@@ -6,7 +6,7 @@
 /*   By: jikang <jikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 17:26:55 by jikang            #+#    #+#             */
-/*   Updated: 2021/03/26 18:25:48 by jikang           ###   ########.fr       */
+/*   Updated: 2021/03/26 18:55:13 by jikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ int main(void)
 	queenZombie.announce();
 	
 	ZombieEvent zombieEvent;
-	Zombie*		zombieDrone;
+	Zombie*		zombieDrone[5];
 
-	zombieDrone = zombieEvent.newZombie();
+	zombieEvent.setZombieType("Drone");
+	for (int i = 0; i < 5; i++)
+		zombieDrone[i] = zombieEvent.
 	
 	return (0);
 }

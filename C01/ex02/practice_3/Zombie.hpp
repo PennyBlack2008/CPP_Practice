@@ -6,7 +6,7 @@
 /*   By: jikang <jikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 17:26:48 by jikang            #+#    #+#             */
-/*   Updated: 2021/03/26 18:43:44 by jikang           ###   ########.fr       */
+/*   Updated: 2021/03/26 20:17:25 by jikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ class	Zombie
 		Zombie(const std::string& name, const std::string& type);
 		~Zombie(void);
 		void		announce(void) const;
-		void		SetName(const std::string& name);
-		void		SetType(const std::string& type);
 
 	private:
 		std::string mName;

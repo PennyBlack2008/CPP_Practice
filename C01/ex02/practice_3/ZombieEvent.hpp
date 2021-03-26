@@ -6,7 +6,7 @@
 /*   By: jikang <jikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 17:26:50 by jikang            #+#    #+#             */
-/*   Updated: 2021/03/26 18:57:38 by jikang           ###   ########.fr       */
+/*   Updated: 2021/03/26 20:27:47 by jikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ class	ZombieEvent
 		void		setZombieType(const std::string& type);
 		Zombie*		newZombie(const std::string& name);
 		Zombie*		randomChump(void);
+	private:
+		std::string	type;
 };
+
+void				program_print(void);
 
 #endif

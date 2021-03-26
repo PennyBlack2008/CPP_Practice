@@ -6,7 +6,7 @@
 /*   By: jikang <jikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 17:56:31 by jikang            #+#    #+#             */
-/*   Updated: 2021/03/26 19:34:30 by jikang           ###   ########.fr       */
+/*   Updated: 2021/03/26 20:19:08 by jikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 ZombieEvent::ZombieEvent(void)
 {
+	this->type = "default";
 	srand(clock());
 }
 
@@ -23,7 +24,11 @@ ZombieEvent::~ZombieEvent(void)
 
 Zombie*		ZombieEvent::newZombie(const std::string& str)
 {
-	this->name = str;
+	Zombie*	zombie;
+
+	zombie = new Zombie(str, this->type);
+	zombie->announce();
+	return (zombie);
 }
 
 Zombie*		ZombieEvent::randomChump(void)
@@ -37,4 +42,9 @@ Zombie*		ZombieEvent::randomChump(void)
 	Zombie* zombie = new Zombie(name, this->type);
 	zombie->announce();
 	return (zombie);
+}
+
+void		ZombieEvent::setZombieType(const std::string& type)
+{
+	this->type = type;
 }

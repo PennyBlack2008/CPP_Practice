@@ -6,7 +6,7 @@
 /*   By: jikang <jikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 17:26:55 by jikang            #+#    #+#             */
-/*   Updated: 2021/03/26 20:36:04 by jikang           ###   ########.fr       */
+/*   Updated: 2021/03/26 20:47:17 by jikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ int main(void)
 		zombieDrone[i] = zombieEventB.randomChump();
 	std::cout << "Drone is working hard.. I mean... they are working too hard\n";
 	for (int i = 0; i < 5; i++)
-		delete (zombieDrone[i]); // Delete Drones
+		delete zombieDrone[i]; // Delete Drones
 	std::cout << "\n------------- All drones are dead from heap -------------\n";
 	std::cout << "QueenZombie punishing Scary boss\n";
-	delete (zombieManager); // Delete Manager
+	delete zombieManager; // Delete Manager
 	std::cout << "Scary boss is dead from heap\n\n\n";
 	std::cout << "QueenZombie will be alive until program turn off\n";
 

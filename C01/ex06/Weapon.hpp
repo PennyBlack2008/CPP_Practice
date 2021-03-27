@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jikang <jikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/26 17:56:43 by jikang            #+#    #+#             */
-/*   Updated: 2021/03/26 22:07:22 by jikang           ###   ########.fr       */
+/*   Created: 2021/03/27 20:40:08 by jikang            #+#    #+#             */
+/*   Updated: 2021/03/27 20:55:15 by jikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-Zombie::Zombie(void)
-	: mName("default")
-	, mType("default")
-{
-}
+# include <iostream>
 
-Zombie::Zombie(const std::string& name, const std::string& type)
-	: mName(name)
-	, mType(type)
+class	Weapon
 {
-}
+	public:
+		Weapon(const std::string& type);
+		~Weapon();
+		void				setType(const std::string& type);
+		const std::string&	getType(void) const;
+	private:
+		std::string mType;
+};
 
-Zombie::~Zombie(void)
-{
-	std::cout << mName << " is died\n";
-}
-
-void		Zombie::announce(void) const
-{
-	std::cout << "<" << mName << " (" << mType << ")> " << "Braiiiiiiinnnssss...\n";
-}
+#endif

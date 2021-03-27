@@ -5,31 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jikang <jikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/26 17:26:55 by jikang            #+#    #+#             */
-/*   Updated: 2021/03/26 22:11:01 by jikang           ###   ########.fr       */
+/*   Created: 2021/03/27 20:40:05 by jikang            #+#    #+#             */
+/*   Updated: 2021/03/27 20:40:07 by jikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieEvent.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
+#include "Weapon.hpp"
 
-void program_print(void)
+int main()
 {
-	std::cout << "=================================================\n";
-	std::cout << "               Program Starts...\n";
-	std::cout << "=================================================\n";
-}
-
-int main(void)
-{
-	program_print();
-	std::cout << "Made new zombie A\n\n";
-	Zombie zombieA("Zombie A", "Main Stack");
-	zombieA.announce();
-	
-	std::cout << "Made new zombie hordes\n\n";
-	ZombieHorde	zombiehorde(3);
-	zombiehorde.announce();
-	std::cout <<
-
-	return (0);
+	{
+		Weapon        club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon        club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: jikang <jikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 12:25:11 by jikang            #+#    #+#             */
-/*   Updated: 2021/03/28 14:27:37 by jikang           ###   ########.fr       */
+/*   Updated: 2021/03/28 15:26:25 by jikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ void	HumanB::attack(void) const
 	if (this->mWeapon)
 		std::cout << this->mName << " attacks with his " << this->mWeapon->getType() << std::endl;
 	else
-		std::cout << this->mName << " doesn't have any weapon, he ran away" << std::endl;
+		std::cerr << this->mName << " doesn't have any weapon, he ran away" << std::endl;
 }

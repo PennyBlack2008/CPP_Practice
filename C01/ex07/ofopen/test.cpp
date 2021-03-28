@@ -13,7 +13,7 @@
 int main()
 {
 	std::ofstream ofs;
-	ofs.open("test.txt", std::ofstream::out | std::ofstream::app);
+	ofs.open("test.txt", std::ofstream::out | std::ofstream::trunc);
 	ofs << " more lorem ipsum";
 	ofs.close();
 	return (0);

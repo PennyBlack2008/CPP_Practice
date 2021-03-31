@@ -5,17 +5,17 @@
 
 class	Fixed
 {
-	private:
-		int			val;
-		static const int bits = 8;
 	public:
 		Fixed();
 		~Fixed();
 		Fixed(const Fixed &ref);
 		Fixed& operator=(const Fixed &ref);
-
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
+		
+	private:
+		int			mVal;
+		static const int bits = 8;
 };
 
 #endif

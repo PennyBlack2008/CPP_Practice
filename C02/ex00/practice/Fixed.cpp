@@ -1,9 +1,9 @@
 #include "Fixed.hpp"
 
 Fixed::Fixed()
+	: mVal(0)
 {
 	std::cout << "Default constructor called\n";
-	val = 0;
 }
 
 Fixed::~Fixed(void)
@@ -14,24 +14,24 @@ Fixed::~Fixed(void)
 Fixed::Fixed(const Fixed& ref)
 {
 	std::cout << "Copy constructor called\n";
-	val = ref.getRawBits();
+	this->mVal = ref.getRawBits();
 }
 
 // 연산자 오버로딩
 Fixed& Fixed::operator=(const Fixed& ref)
 {
 	std::cout << "Assignation operator called\n";
-	val = ref.getRawBits();
+	this->mVal = ref.getRawBits();
 	return (*this);
 }
 
 int			Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called\n";
-	return (val);
+	return (this->mVal);
 }
 
 void		Fixed::setRawBits(int const raw)
 {
-	val = raw;
+	this->mVal = raw;
 }

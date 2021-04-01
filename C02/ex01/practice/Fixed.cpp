@@ -21,7 +21,7 @@ Fixed::Fixed(int const val)
 Fixed::Fixed(float const val)
 {
 	std::cout << "Float constructor called\n";
-	this->mVal = roundf(val * (1 << mBits));
+	this->mVal = roundf(val * (1 << mBits)); // 2^8 곱하기
 }
 
 Fixed::~Fixed(void)
@@ -48,12 +48,12 @@ void	Fixed::setRawBits(int const raw)
 
 int		Fixed::toInt(void) const
 {
-	return (this->mVal >> mBits);
+	return (this->mVal >> mBits); // 2^8 나누기
 }
 
 float	Fixed::toFloat(void) const
 {
-	return ((float)this->mVal / (1 << mBits));
+	return ((float)this->mVal / (1 << mBits)); // 2^8 나누기
 }
 
 std::ostream& operator<<(std::ostream &os, const Fixed& ref)

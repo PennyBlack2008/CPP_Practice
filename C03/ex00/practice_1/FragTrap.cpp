@@ -6,9 +6,10 @@
 /*   By: jikang <jikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 15:07:56 by jikang            #+#    #+#             */
-/*   Updated: 2021/04/01 15:17:58 by jikang           ###   ########.fr       */
+/*   Updated: 2021/04/01 22:07:51 by jikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
+FragTrap::FragTrap

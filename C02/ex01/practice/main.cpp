@@ -2,6 +2,8 @@
 이 문제의 의도를 정확히 모르겠습니다. 
 제가 생각하기로는 내부적으로 Float Point 를 Fixed Point 로 비트 변환하여 저장하는 게 목표인 것같습니다.
 https://embeddedartistry.com/blog/2018/07/12/simple-fixed-point-conversion-in-c/
+https://inst.eecs.berkeley.edu//~cs61c/sp06/handout/fixedpt.html
+https://www.h-schmidt.net/FloatConverter/IEEE754.html
 
 Float Point 를 Fixed Point 로 비트 변환하여 저장하는 법.
 (i) Calculate 숫자 = floating_input * 2^(fractional_bits)
@@ -23,14 +25,14 @@ int		main(void)
 	a = Fixed(1234.4321f);
 
 	std::cout << "a is " << a << std::endl;
-	std::cout << "b is " << a << std::endl;
-	std::cout << "c is " << a << std::endl;
-	std::cout << "d is " << a << std::endl;
+	std::cout << "b is " << b << std::endl;
+	std::cout << "c is " << c << std::endl;
+	std::cout << "d is " << d << std::endl;
 
 	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "b is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "c is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "d is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 
 	return 0;
 }

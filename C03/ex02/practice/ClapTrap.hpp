@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jikang <jikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/01 15:07:48 by jikang            #+#    #+#             */
-/*   Updated: 2021/04/02 09:04:56 by jikang           ###   ########.fr       */
+/*   Created: 2021/04/02 15:54:54 by jikang            #+#    #+#             */
+/*   Updated: 2021/04/02 15:58:38 by jikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
-int			main(void)
+#include <iostream>
+#include <string>
+#include <ctime>
+#include <cstdlib>
+
+class		ClapTrap
 {
-	srand(clock());
-	FragTrap a;
-	FragTrap b(a);
 
-	a.rangedAttack("target");
-	a.meleeAttack("target");
-	b.meleeAttack("target");
-	return (0);
-}
+};
+
+#endif

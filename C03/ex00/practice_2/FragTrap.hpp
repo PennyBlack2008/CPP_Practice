@@ -6,7 +6,7 @@
 /*   By: jikang <jikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 15:08:04 by jikang            #+#    #+#             */
-/*   Updated: 2021/04/02 10:12:45 by jikang           ###   ########.fr       */
+/*   Updated: 2021/04/02 12:55:11 by jikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,13 @@
 # include <cstdlib>
 # include <string>
 # include <iostream>
+
+# define DEFAULT	"\e[0;0m"
+# define RED		"\e[0;31m"
+# define GREEN		"\e[0;32m"
+# define YELLOW		"\e[0;33m"
+# define CYAN		"\e[0;36m"
+# define PURPLE		"\e[0;35m"
 
 class		FragTrap
 {
@@ -43,6 +50,8 @@ class		FragTrap
 		unsigned int	mMeleeAttackDamage;
 		unsigned int	mRangedAttackDamage;
 		unsigned int	mArmorDamageReduction;
+		static std::string mFunnyAttackList[5];
 };
 
+void		printWelcome(void);
 #endif

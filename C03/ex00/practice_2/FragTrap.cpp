@@ -6,7 +6,7 @@
 /*   By: jikang <jikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 15:07:56 by jikang            #+#    #+#             */
-/*   Updated: 2021/04/02 12:14:02 by jikang           ###   ########.fr       */
+/*   Updated: 2021/04/02 13:11:02 by jikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ FragTrap::FragTrap(void)
 	, mRangedAttackDamage(20)
 	, mArmorDamageReduction(5)
 {
-	std::cout << "<" << mName << ">: system booted! Ready to roll!" << std::endl;
+	std::cout << CYAN << "<" << mName << ">: system booted! Ready to roll!" << std::endl;
 }
 
 FragTrap::FragTrap(const std::string& name)
@@ -45,13 +45,13 @@ FragTrap::FragTrap(const std::string& name)
 	, mRangedAttackDamage(20)
 	, mArmorDamageReduction(5)
 {
-	std::cout << "<" << mName << ">: system booted! Ready to roll!" << std::endl;
+	std::cout << CYAN << "<" << mName << ">: system booted! Ready to roll!" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap& other)
 {
 	*this = other;
-	std::cout << "<" << mName << ">: system booted! Ready to roll!" << std::endl;
+	std::cout << CYAN << "<" << mName << ">: system booted! Ready to roll!" << std::endl;
 }
 
 FragTrap&	FragTrap::operator=(const FragTrap& other)
@@ -70,14 +70,14 @@ FragTrap&	FragTrap::operator=(const FragTrap& other)
 
 FragTrap::~FragTrap()
 {
-	std::cout << "<" << mName <<">: System shutdowns...(Dead)" << std::endl;
+	std::cout << RED << "<" << mName <<">: System shutdowns...(Dead)" << std::endl;
 }
 
 void		FragTrap::rangedAttack(const std::string& target)
 {
 	if (mHP <= 0)
 		return ;
-	std::cout << "FR4G-TP <" << mName << "> attacks <" << target \
+	std::cout << GREEN << "FR4G-TP <" << mName << "> attacks <" << target \
 	<< "> at range, causing <" << mRangedAttackDamage \
 	<< "> points of damage!" << std::endl;
 }
@@ -86,8 +86,8 @@ void		FragTrap::meleeAttack(const std::string& target)
 {
 	if (mHP <= 0)
 		return ;
-	std::cout << "FR4G-TP <" << mName << "> attacks <" << target \
-	<< "> at melee, causing <" << meleeAttack \
+	std::cout << GREEN << "FR4G-TP <" << mName << "> attacks <" << target \
+	<< "> at melee, causing <" << mMeleeAttackDamage \
 	<< "> points of damage!" << std::endl;
 }
 
@@ -103,13 +103,16 @@ void		FragTrap::takeDamage(unsigned int amount)
 		damage = amount - mArmorDamageReduction;
 	else
 		damage = 0;
-	std::cout << "FR4G-TP <" << mName << "> is under attack! " \
-	<< "Damage " << amount << std::endl \
+	std::cout << YELLOW << "FR4G-TP <" << mName << "> is under attack! " \
+	<< "had damaged <" << amount << "> T.T" << std::endl \
 	<< "Armor takes damage of <" << mArmorDamageReduction \
-	<< "> " << mName << " gets points of <" << damage << "> damage!" << std::endl;
+	<< "> " << mName << " had points of <" << damage << "> damage!" << std::endl;
+	std::cout << mName << "'s HP : " << mHP;
 	if (mHP < damage)
 		mHP = 0;
-	std::cout << "<" << mName << "> has <" << mHP << "> HP" << std::endl;
+	else
+		mHP -= damage;
+	std::cout << " -> " << mHP << std::endl;
 }
 
 void		FragTrap::beRepaired(unsigned int amount)
@@ -119,9 +122,9 @@ void		FragTrap::beRepaired(unsigned int amount)
 	std::cout << "FR4G-TP <" << mName << "> used healing portion" << std::endl;
 	std::cout << mName << "'s HP : " << mHP << " -> ";
 	/* 힐량이 최대 체력을 넘기지 않도록 */
-	mHP += 30;
+	mHP += amount;
 	if (mHP > mHP_Max)
-		mHp = mHP_Max;
+		mHP = mHP_Max;
 	std::cout << mHP << std::endl;
 }
 
@@ -129,14 +132,9 @@ void		FragTrap::vaulthunter_dot_exe(const std::string& target)
 {
 	if (mHP <= 0)
 		return ;
-	/* List random attack */
-	const std::string mFunnyAttackList[5];
-	mFunnyAttackList = {"Big gasoline fart", "Awkward dance",\
-	"Thai massage", "Throwing Dirty socks", "Singing terribly"};
-
 	if (mMP >= 25)
 	{	
-		std::cout << "FR4G-TP <" << mName << "> " << mFunnyAttackList[rand() % 5]
+		std::cout << PURPLE << "FR4G-TP <" << mName << "> " << mFunnyAttackList[rand() % 5]
 		<< " <" << target << ">" << std::endl;
 		std::cout << "MP : " << mMP << " -> " << mMP - 25 << std::endl;
 		mMP -= 25;
@@ -149,3 +147,12 @@ const unsigned int&	FragTrap::getHitPoints(void) const
 {
 	return (this->mHP);
 }
+
+std::string			FragTrap::mFunnyAttackList[5] =
+{
+	"Big gasoline fart",
+	"Awkward dance",
+	"Thai massage",
+	"Throwing Dirty socks",
+	"Singing terribly"
+};

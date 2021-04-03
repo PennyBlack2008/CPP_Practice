@@ -6,7 +6,7 @@
 /*   By: jikang <jikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 15:54:26 by jikang            #+#    #+#             */
-/*   Updated: 2021/04/03 14:06:22 by jikang           ###   ########.fr       */
+/*   Updated: 2021/04/03 14:16:32 by jikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void		ClapTrap::rangedAttack(const std::string& target)
 {
 	if (mHP <= 0)
 		return ;
-	std::cout << GREEN <<  mName << "> attacks <" << target \
+	std::cout << GREEN << "<" << mName << "> attacks <" << target \
 	<< "> at range, causing <" << mRangedAttackDamage \
 	<< "> points of damage!" << std::endl;
 }
@@ -78,7 +78,7 @@ void		ClapTrap::meleeAttack(const std::string& target)
 {
 	if (mHP <= 0)
 		return ;
-	std::cout << GREEN <<  mName << "> attacks <" << target \
+	std::cout << GREEN << "<" << mName << "> attacks <" << target \
 	<< "> at melee, causing <" << mMeleeAttackDamage \
 	<< "> points of damage!" << std::endl;
 }
@@ -111,7 +111,7 @@ void		ClapTrap::beRepaired(unsigned int amount)
 {
 	if (mHP <= 0)
 		return ;
-	std::cout << mName << "> used healing portion" << std::endl;
+	std::cout << DEFAULT << "<" << mName << "> used healing portion" << std::endl;
 	std::cout << mName << "'s HP : " << mHP << " -> ";
 	/* 힐량이 최대 체력을 넘기지 않도록 */
 	mHP += amount;

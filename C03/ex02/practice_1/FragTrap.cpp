@@ -6,7 +6,7 @@
 /*   By: jikang <jikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 15:07:56 by jikang            #+#    #+#             */
-/*   Updated: 2021/04/03 14:04:12 by jikang           ###   ########.fr       */
+/*   Updated: 2021/04/03 14:17:40 by jikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ FragTrap::FragTrap(void)
 	mName = "undefined FragTrap";
 	mMP = 100;
 	mMP_Max = 100;
-	std::cout << CYAN << "<" << mName << ">: system booted! Ready to roll!" << std::endl;
+	std::cout << CYAN << "<" << mName << ">: FragTrap system booted! Ready to roll!" << std::endl;
 }
 
 FragTrap::FragTrap(const std::string& name)
@@ -34,14 +34,14 @@ FragTrap::FragTrap(const std::string& name)
 {
 	mMP = 100;
 	mMP_Max = 100;
-	std::cout << CYAN << "<" << mName << ">: system booted! Ready to roll!" << std::endl;
+	std::cout << CYAN << "<" << mName << ">: FragTrap system booted! Ready to roll!" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap& other)
 	: ClapTrap(other)
 {
 	*this = other;
-	std::cout << CYAN << "<" << this->mName << ">: system booted! Ready to roll!" << std::endl;
+	std::cout << CYAN << "<" << this->mName << ">: FragTrap system booted! Ready to roll!" << std::endl;
 }
 
 FragTrap&	FragTrap::operator=(const FragTrap& other)

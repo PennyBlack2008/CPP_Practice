@@ -6,7 +6,7 @@ Weapon has name, cost ap, damage
 */
 class	AWeapon
 {
-private: [...]
+private:
 public:
 	AWeapon(std::string const & name, int apcost, int damage); [...] ~AWeapon();
 	std::string [...] getName() const;

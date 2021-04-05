@@ -1,4 +1,4 @@
-#include "MateriaSource"
+#include "MateriaSource.hpp"
 
 MateriaSource::MateriaSource(void)
 	: mCount(0)

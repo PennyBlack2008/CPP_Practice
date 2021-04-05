@@ -3,13 +3,17 @@
 
 # include "AMateria.hpp"
 
-class	Ice : public Materia
+class	Ice : public AMateria
 {
 	public:
 		Ice(void);
-		~Ice(void);
+		Ice(const Ice& other);
+		virtual ~Ice(void);
+
+		Ice&		operator=(const Ice& other);
+
 		AMateria*	clone() const;
 		void		use(ICharacter& target);
 };
 
-#endif;
+#endif

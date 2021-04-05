@@ -4,19 +4,36 @@ Character::Character()
 	: mCount(0)
 	, mName("Default Character")
 {
+	for (int i = 0; i < 4; i++)
+	{
+		mInventory[i] = NULL;
+	}
 }
 
 Character::Character(const std::string& name)
 	: mCount(0)
-	, mName(name);
+	, mName(name)
 {
+	for (int i = 0; i < 4; i++)
+	{
+		mInventory[i] = NULL;
+	}
 }
 
 // 동적할당이 아닌 배열로 선언했기 때문에 깊은 복사 처리 따로 없이
 // 얕은 복사가 깊은 복사가 된다.
 Character::Character(const Character& other)
 {
-	*this = other
+	*this = other;
+}
+
+Character::~Character(void)
+{
+	for (int i = 0; i < mCount; i++)
+	{
+		delete mInventory[i];
+		mInventory[i] = NULL;
+	}
 }
 
 Character&		Character::operator=(const Character& other)

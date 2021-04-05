@@ -3,12 +3,12 @@
 
 # include "IMateriaSource.hpp"
 
-class	MateriaSoure : public IMateriaSource
+class	MateriaSource : public IMateriaSource
 {
 public:
-	MateriaSoure(void);
+	MateriaSource(void);
 	MateriaSource(const MateriaSource& other);
-	~IMateriaSource(void);
+	virtual ~MateriaSource(void);
 
 	MateriaSource&	operator=(const MateriaSource& other);
 

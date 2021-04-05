@@ -1,6 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jikang <jikang@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/04/05 09:26:33 by jikang            #+#    #+#             */
+/*   Updated: 2021/04/05 09:35:54 by jikang           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
 
+# include "Enemy.hpp"
+# include "AWeapon.hpp"
 /*
  Has a name, a number of AP (Action points), 
  and a pointer to AWeapon repre- senting the current weapon.
@@ -27,20 +41,23 @@ public:
 	Character(const std::string& name);
 	Character(const Character& other);
 	~Character(void);
+	
 	Character	&operator=(const Character& other);
 
-	std::string		getName(void) const;
-	int				getAP(void) const;
-	AWeapon*		getWeapon(void) const
+	const std::string&	getName(void) const;
+	int					getAP(void) const;
+	AWeapon*			getWeapon(void) const;
 	
-	void			recoverAP(void);
-	void			equip(AWeapon* weapon);
-	void			attack(Enemy* foe);
+	void				recoverAP(void);
+	void				equip(AWeapon* weapon);
+	void				attack(Enemy* enemy);
 private:
-	Character(void);
-	std::string		mName;
+	Character(void);	// Charactor abc 로 선언되는 것을 막았음.
+	std::string			mName;
+	int					mAP;
+	AWeapon*			mWeapon;
 };
 
-std::ostream&		operator<<(std::ostream &os, const Character &ref);
+std::ostream&			operator<<(std::ostream &os, const Character &ref);
 
 #endif

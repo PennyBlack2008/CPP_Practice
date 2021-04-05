@@ -1,18 +1,30 @@
-/*
-동적할당을 하는 구나
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jikang <jikang@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/04/05 09:29:01 by jikang            #+#    #+#             */
+/*   Updated: 2021/04/05 09:29:09 by jikang           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "PlasmaRifle.hpp"
+#include "PowerFist.hpp"
+#include "Character.hpp"
+#include "RadScorpion.hpp"
 
 int main()
 {
-
 	Character* me = new Character("me");
 	std::cout << *me;
 	//me has 40 AP and is unarmed$
 	
 	Enemy* b = new RadScorpion();
 	// * click click click *
-	AWeapon* pr = new PlasmaRifle();
-	AWeapon* pf = new PowerFist();
+	AWeapon* pr = new PlasmaRifle(); // 사실상 Plasma 이고 당연히 AWeapon 의 특성 모두 갖고 있음.
+	AWeapon* pf = new PowerFist(); // 사실상 PowerFist() 이고 당연히 AWeapon 의 특성 모두 갖고 있음.
 	
 	me->equip(pr);
 	std::cout << *me;

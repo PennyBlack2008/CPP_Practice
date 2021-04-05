@@ -6,7 +6,7 @@
 /*   By: jikang <jikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 10:31:01 by jikang            #+#    #+#             */
-/*   Updated: 2021/04/05 11:18:53 by jikang           ###   ########.fr       */
+/*   Updated: 2021/04/05 13:52:45 by jikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,17 +45,13 @@ Squad&			Squad::operator=(const Squad& other)
 	if (mUnits != NULL)
 	{
 		for (int i = 0; i < mCount; i++)
-		{
 			delete mUnits[i];
-		}
 		delete[] mUnits;
 		mUnits = NULL;
 	}
-	mCount = 0;
-	for (int i = 0; i < other.mCount; i++)
-	{
+	this->mCount = 0;
+	for (int i = 0; i < other.getCount(); i++)
 		push(other.getUnit(i)->clone());
-	}
 	return (*this);
 }
 
@@ -96,9 +92,10 @@ int				Squad::push(ISpaceMarine* unit)
 		}
 		/* 마지막에 신병을 넣고 tmp 포인터 배열로 완전히 대체 */
 		tmp[mCount] = unit;
-		if (mCount)
+		if (mUnits != NULL)
 		{
 			delete[] mUnits;
+			mUnits = NULL;
 		}
 		mUnits = tmp;
 		mCount++;

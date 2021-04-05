@@ -6,7 +6,7 @@
 /*   By: jikang <jikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 09:29:01 by jikang            #+#    #+#             */
-/*   Updated: 2021/04/05 09:29:09 by jikang           ###   ########.fr       */
+/*   Updated: 2021/04/05 10:04:26 by jikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int main()
 	
 	Enemy* b = new RadScorpion();
 	// * click click click *
+	
 	AWeapon* pr = new PlasmaRifle(); // 사실상 Plasma 이고 당연히 AWeapon 의 특성 모두 갖고 있음.
 	AWeapon* pf = new PowerFist(); // 사실상 PowerFist() 이고 당연히 AWeapon 의 특성 모두 갖고 있음.
 	
@@ -37,10 +38,10 @@ int main()
 	
 	std::cout << *me;
 	// me has 32 AP and wields a Power Fist$
-	// me has 32 AP and wields a Plasma Rifle$
 	me->equip(pr);
 
 	std::cout << *me;
+	// me has 32 AP and wields a Plasma Rifle$
 	
 	me->attack(b);
 	// me attacks RadScorpion with a Plasma Rifle$

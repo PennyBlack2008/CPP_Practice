@@ -1,13 +1,13 @@
-#ifndef ICE_HPP
-# define ICE_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 
 # include "AMateria.hpp"
 
-class	Ice : public Materia
+class	Cure : public Materia
 {
 	public:
-		Ice(void);
-		~Ice(void);
+		Cure(void);
+		~Cure(void);
 		AMateria*	clone() const;
 		void		use(ICharacter& target);
 };

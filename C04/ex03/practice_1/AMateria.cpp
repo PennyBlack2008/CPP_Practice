@@ -2,7 +2,7 @@
 
 AMateria::AMateria
 	: _xp(0)
-	, mType("undefined")
+	, mType("Undefined Type")
 {
 }
 

@@ -1,7 +1,7 @@
 #include "Cure.hpp"
 
 Cure::Cure(void)
-	:AMateria("ice")
+	:AMateria("cure")
 {
 }
 

@@ -1,6 +1,4 @@
-#include <iostream>
-#include <string>
-#include <typeinfo>
+#include "Convert.hpp"
 
 /*
 literal must be "Char, Int, Float, Double". And Decimal.
@@ -10,6 +8,8 @@ char : 'c', 'a'... non displayalbe characters is prohibited. notification requir
 
 int main(int argc, char* argv[])
 {
+	double input;
+
 	if (argc != 2)
 	{
 		std::cerr << "Wrong Arguments\n" << std::endl;

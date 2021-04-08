@@ -26,7 +26,7 @@ public:
 	{
 	public:
 		virtual const char* what() const throw();
-	}
+	};
 
 	void		toChar();
 	void		toInt();

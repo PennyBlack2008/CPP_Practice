@@ -7,16 +7,18 @@
 class	Convert
 {
 public:
+	Convert(void);
 	Convert(const std::string& literal);
 	Convert(const Convert& other);
 	~Convert(void);
 
 	Convert&			operator=(const Convert& other);
 
-	const std::string&	GetType(void) const;
+	const int&	GetType(void) const;
 	// void				SetType(std::string& type);
 	const std::string&	GetLiteral(void) const;
 	bool				isTwice(const std::string& str, const char needle) const;
+	void				DetectType(void);
 	enum Type
 	{
 		IMPOSSIBLE,
@@ -25,9 +27,13 @@ public:
 		FLOAT,
 		DOUBLE
 	};
+
+	class ImpossibleException : public std::exception
+	{
+		virtual const char* what(void) const throw();
+	};
 private:
-	Convert(void);
-	const std::string	mLiteral;
+	std::string			mLiteral;
 	int					mType;
 };
 

@@ -29,7 +29,7 @@ Convert&			Convert::operator=(const Convert& other)
 	return (*this);
 }
 
-const std::string&	Convert::GetType(void) const
+const int&	Convert::GetType(void) const
 {
 	return (mType);
 }
@@ -42,6 +42,7 @@ const std::string&	Convert::GetType(void) const
 void				Convert::DetectType(void)
 {
 	std::size_t found;
+	std::string str;
 
 	// Char 이냐
 	if (mLiteral.length() == 1)
@@ -78,14 +79,14 @@ void				Convert::DetectType(void)
 	found = mLiteral.find(".");
 	if (found != std::string::npos)
 	{
-		found != mLiteral.find("f");
+		found = mLiteral.find("f");
 		if (found != std::string::npos)
 		{
 			if (mLiteral.compare(mLiteral.size() - 1, 1, "f") == 0) // 나중에 여기에 f가 중복으로 들어갈 경우와 마지막에 안붙는 경우 막기
 			{
 				/* float 영역 */
 				mType = FLOAT;
-				retrun ;
+				return ;
 			}
 			else
 			{
@@ -123,4 +124,9 @@ bool	Convert::isTwice(const std::string& str, const char needle) const
 	}
 	else
 		return (false);
+}
+
+const char* Convert::ImpossibleException::what(void) const throw()
+{
+	return ("impossible");
 }

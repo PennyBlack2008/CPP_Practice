@@ -10,14 +10,17 @@ public:
 	ConvertChar(const ConvertChar& other);
 	~ConvertChar(void);
 	ConvertChar&		operator=(const ConvertChar& other);
+	
 	void	Display(void);
-
+	char	GetValue(void);
+	void	Calculate(void);
 	class NonDisplayableException : public std::exception
 	{
 		virtual const char* what(void) const throw();
 	};
 private:
 	ConvertChar(void);
+	char		mValue;
 };
 
 #endif

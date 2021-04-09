@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include "ConvertChar.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -13,7 +14,7 @@ int main(int argc, char *argv[])
 		try
 		{
 			std::cout << "char: ";
-			char c = ConvertChar(str).GetValue();
+			char c = ConvertChar(argv[1]).GetValue();
 			std::cout << "'" << c << "'" << std::endl;
 		}
 		catch(const ConvertChar::NonDisplayableException& e)
@@ -26,8 +27,8 @@ int main(int argc, char *argv[])
 		}
 	}
 
-	CovertFloat(argv[1]);
-	ConvertDouble(argv[1]);
+	// CovertFloat(argv[1]);
+	// ConvertDouble(argv[1]);
 	
 	return (0);
 }

@@ -12,28 +12,20 @@ int main(int argc, char *argv[])
 		ConvertChar(argv[1]);
 		try
 		{
-			ConvertChar.display();
+			std::cout << "char: ";
+			char c = ConvertChar(str).GetValue();
+			std::cout << "'" << c << "'" << std::endl;
 		}
 		catch(const ConvertChar::NonDisplayableException& e)
 		{
-			
+			std::cout << "Non displayable" << '\n';
 		}
 		catch(const std::exception& e)
 		{
-			
+			std::cout << "impossible" << '\n';
 		}
 	}
-	{
-		ConvertInt(argv[1]);
-		try
-		{
-			ConvertInt.display();
-		}
-		catch
-		{
-			std::cout << "Non displayable\n";
-		}
-	}
+
 	CovertFloat(argv[1]);
 	ConvertDouble(argv[1]);
 	

@@ -6,20 +6,26 @@
 
 Convert::Convert(void)
 	: mLiteral("")
-	, mType(0)
+	, mType(IMPOSSIBLE)
 {
 }
 
 /* 여기서 계산을 실행해서 멤버에 값을 넣어주자 */
 Convert::Convert(const std::string& literal)
 	: mLiteral(literal)
-	, mType(0)
+	, mType(IMPOSSIBLE)
 {
+	DetectType();
+	std::cout << mType << std::endl;
 }
 
 Convert::Convert(const Convert& other)
 {
 	*this = other;
+}
+
+Convert::~Convert(void)
+{
 }
 
 Convert&			Convert::operator=(const Convert& other)

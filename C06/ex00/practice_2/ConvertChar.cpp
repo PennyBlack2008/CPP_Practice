@@ -33,7 +33,11 @@ void				ConvertChar::Calculate(void)
 	{
 		try
 		{
-			mValue = static_cast<char>(std::stoi(str));
+			std::cout << "Getliteral is " << GetLiteral() << std::endl;
+			std::cout << "stoi(Getliteral) is " << std::atol(GetLiteral()) << std::endl;
+			std::cout << "static_cast(stoi(Getliteral)) is " << static_cast<char>(std::atol(GetLiteral())) << std::endl;
+			mValue = static_cast<char>(std::atol(GetLiteral()));
+			std::cout << "mValue is " << mValue << std::endl;
 		}
 		catch(const std::exception& e)
 		{
@@ -46,7 +50,7 @@ void				ConvertChar::Calculate(void)
 	}
 	else if (GetType() == INT)
 	{
-		mValue = static_cast<char>(std::stoi(str));
+		mValue = static_cast<char>(std::stoi(GetLiteral()));
 	}
 	else if (GetType() == FLOAT)
 	{
@@ -67,7 +71,7 @@ void				ConvertChar::Calculate(void)
 	{
 		std::string			pseudoLiterals[8] = {"inff", "-inff", "+inff", "nanf", "inf", "-inf", "+inf", "nan"};
 		std::stringstream	ss;
-		double				tmp = std::stod(str);
+		double				tmp = std::stod(GetLiteral());
 		ss << tmp;
 		for (int i = 0; i < 8; i++)
 		{

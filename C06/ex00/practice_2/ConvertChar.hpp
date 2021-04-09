@@ -2,10 +2,12 @@
 # define CONVERTCHAR_HPP
 
 # include "Convert.hpp"
+# include <sstream>
 
 class	ConvertChar : public Convert
 {
 public:
+	ConvertChar(void);
 	ConvertChar(const std::string& literal);
 	ConvertChar(const ConvertChar& other);
 	~ConvertChar(void);
@@ -19,7 +21,6 @@ public:
 		virtual const char* what(void) const throw();
 	};
 private:
-	ConvertChar(void);
 	char		mValue;
 };
 

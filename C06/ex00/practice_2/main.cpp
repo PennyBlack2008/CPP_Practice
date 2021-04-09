@@ -9,12 +9,13 @@ int main(int argc, char *argv[])
 		std::cerr << "Invalid argument!\n";
 		return (1);
 	}
+	std::string literal(argv[1]);
 	{
-		ConvertChar(argv[1]);
 		try
 		{
+			std::cout << ConvertChar(literal).GetType() << std::endl;
 			std::cout << "char: ";
-			char c = ConvertChar(argv[1]).GetValue();
+			char c = ConvertChar(literal).GetValue();
 			std::cout << "'" << c << "'" << std::endl;
 		}
 		catch(const ConvertChar::NonDisplayableException& e)

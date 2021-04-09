@@ -21,11 +21,11 @@ public:
 	void				DetectType(void);
 	enum Type
 	{
-		IMPOSSIBLE,
-		CHAR,
-		INT,
-		FLOAT,
-		DOUBLE
+		IMPOSSIBLE, // 0
+		CHAR, // 1
+		INT, // 2
+		FLOAT, // 3
+		DOUBLE // 4
 	};
 
 	class ImpossibleException : public std::exception

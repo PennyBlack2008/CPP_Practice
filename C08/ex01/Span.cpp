@@ -55,7 +55,6 @@ unsigned int			Span::shortestSpan(void) const
 	{
 		std::list<int>::iterator itNext = it;
 		itNext++;
-		// std::cout << "it : " << *it << " itNext : " << *itNext << std::endl;
 		unsigned int	diff = *itNext - *it;
 		if (diff < shortest)
 		{

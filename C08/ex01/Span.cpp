@@ -48,17 +48,21 @@ unsigned int			Span::shortestSpan(void) const
 	{
 		throw MinSizeException();
 	}
-	std::list<int>  tmp1(mList);
-
-	tmp1.sort();
-	tmp1.unique();
-	if (mList.size() != tmp1.size())
+	std::list<int>	tmp(mList);
+	tmp.sort();
+	unsigned int	shortest = -1;
+	for (std::list<int>::iterator it = tmp.begin(); it != --(tmp.end()); ++it)
 	{
-		return (0);
+		std::list<int>::iterator itNext = it;
+		itNext++;
+		// std::cout << "it : " << *it << " itNext : " << *itNext << std::endl;
+		unsigned int	diff = *itNext - *it;
+		if (diff < shortest)
+		{
+			shortest = diff;
+		}
 	}
-	long	result[tmp1.size()];
-	std::adjacent_difference(tmp1.begin(), tmp1.end(), result);
-	return (*std::min_element(result + 1, result + tmp1.size()));
+	return (shortest);
 }
 
 unsigned int			Span::longestSpan(void) const

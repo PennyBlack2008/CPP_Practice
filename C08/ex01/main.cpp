@@ -26,7 +26,6 @@ int main(void)
 		std::cout << "Limit value test" << std::endl;
 		Span sp = Span(2);
 		sp.addNumber(std::numeric_limits<int>::min());
-		// sp.addNumber(std::numeric_limits<int>::min());
 		sp.addNumber(std::numeric_limits<int>::max());
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
@@ -75,7 +74,7 @@ int main(void)
 			std::cout << "Add number test" << std::endl;
 			Span sp = Span(10001);
 			std::vector<int> vec(10001, 0);
-			sp.addNumber(vec.begin(), vec.end());
+			sp.addNumber(vec.begin(), vec.end()); // iterator 를 사용한 addNumber
 			std::cout << "end : " << *(sp.GetList().end()) << std::endl;
 		}
 		catch(const std::exception& e)
@@ -90,7 +89,7 @@ int main(void)
 			Span sp = Span(10001);
 			std::vector<int> vec(10002, 0);
 			std::cout << "end : " << *(sp.GetList().end()) << std::endl;
-			sp.addNumber(vec.begin(), vec.end());
+			sp.addNumber(vec.begin(), vec.end()); // iterator 를 사용한 addNumber
 			std::cout << "end : " << *(sp.GetList().end()) << std::endl;
 		}
 		catch(const std::exception& e)

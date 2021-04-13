@@ -50,7 +50,7 @@ unsigned int			Span::shortestSpan(void) const
 	}
 	std::list<int>	tmp(mList);
 	tmp.sort();
-	unsigned int	shortest = -1;
+	unsigned int	shortest = -1; // unsigned int 최대값.
 	for (std::list<int>::iterator it = tmp.begin(); it != --(tmp.end()); ++it)
 	{
 		std::list<int>::iterator itNext = it;

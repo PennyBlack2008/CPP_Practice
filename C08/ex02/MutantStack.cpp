@@ -1,7 +1,7 @@
 #ifndef MUTANTSTACK_CPP
 # define MUTANTSTACK_CPP
 
-# include "MutantStack.hpp"
+# include "mutantstack.hpp"
 
 template<typename T>
 MutantStack<T>::MutantStack(void)

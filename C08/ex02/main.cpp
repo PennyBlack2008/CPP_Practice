@@ -1,9 +1,10 @@
 #include <iostream>
 #include <list>
-#include "MutantStack.hpp"
+#include "mutantstack.hpp"
 
 int main(void)
 {
+	/* mstack test */
 	std::cout << std::string(60, '-') << std::endl;
 	std::cout << "stack test" << std::endl;
 	std::cout << std::string(60, '-') << std::endl;
@@ -37,38 +38,19 @@ int main(void)
 		}
 		std::stack<int>	s(mstack);
 	}
+
+
+	/* char 형일 때 테스트 */
 	std::cout << std::string(60, '-') << std::endl;
-	std::cout << "list test" << std::endl;
+	std::cout << "char test" << std::endl;
 	std::cout << std::string(60, '-') << std::endl;
 	{
-		std::list<int>	mstack;
+		MutantStack<char>	sample;
 
-		mstack.push_back(5);
-		mstack.push_back(17);
-
-		std::cout << mstack.back() << std::endl;
-
-		mstack.pop_back();
-
-		std::cout << mstack.size() << std::endl;
-
-		mstack.push_back(3);
-		mstack.push_back(5);
-		mstack.push_back(737);
-		//[...]
-		mstack.push_back(0);
-
-		std::list<int>::iterator	it = mstack.begin();
-		std::list<int>::iterator	ite = mstack.end();
-
-		++it;
-		--it;
-		while (it != ite)
-		{
-			std::cout << *it << std::endl;
-			++it;
-		}
-		std::list<int> s(mstack);
+		for(char i = 'a'; i <= 'z'; i++)
+			sample.push(i);
+		for(MutantStack<char>::iterator it = sample.begin(); it != sample.end(); it++)
+			std::cout << *it << ' ';
 	}
 
 	return (0);

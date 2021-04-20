@@ -25,5 +25,11 @@ std::cout << "The contents of second are:";
     std::cout << ' ' << *it;
   std::cout << '\n';
 
+std::cout << "The contents of third are:";
+  for (std::vector<int>::iterator it = third.begin(); it != third.end(); ++it)
+    std::cout << ' ' << *it;
+  std::cout << '\n';
+
+
   return 0;
 }

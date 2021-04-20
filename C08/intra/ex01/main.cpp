@@ -24,7 +24,7 @@ int main(void)
 	{
 		std::cout << std::string(60, '-') << std::endl;
 		std::cout << "Limit value test" << std::endl;
-		Span sp = Span(2);
+		Span sp = Span(3);
 		sp.addNumber(std::numeric_limits<int>::min());
 		sp.addNumber(std::numeric_limits<int>::max());
 		std::cout << sp.shortestSpan() << std::endl;
@@ -74,21 +74,6 @@ int main(void)
 			std::cout << "Add number test" << std::endl;
 			Span sp = Span(10001);
 			std::vector<int> vec(10001, 0);
-			sp.addNumber(vec.begin(), vec.end()); // iterator 를 사용한 addNumber
-			std::cout << "end : " << *(sp.GetList().end()) << std::endl;
-		}
-		catch(const std::exception& e)
-		{
-			std::cout << e.what() << '\n';
-		}
-		/* 10001 개 짜리에 10002 개 넣는 거 당연히 에러 */
-		try
-		{
-			std::cout << std::string(60, '-') << std::endl;
-			std::cout << "Add number exception test" << std::endl;
-			Span sp = Span(10001);
-			std::vector<int> vec(10002, 0);
-			std::cout << "end : " << *(sp.GetList().end()) << std::endl;
 			sp.addNumber(vec.begin(), vec.end()); // iterator 를 사용한 addNumber
 			std::cout << "end : " << *(sp.GetList().end()) << std::endl;
 		}
